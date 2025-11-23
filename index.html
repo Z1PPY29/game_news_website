@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game Releases — Yangiliklar va Release-lar</title>
+   <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <h1 class="logo">Game<span class="accent">Pulse</span></h1>
+
+      <div class="controls">
+        <input id="search" type="search" placeholder="O'yin yoki platforma qidir..." aria-label="Search games" />
+        <select id="filter">
+          <option value="all">Barchasi</option>
+          <option value="released">Chiqqanlar</option>
+          <option value="upcoming">Kelayotganlar</option>
+        </select>
+        <button id="sortBtn" title="Sort by date">Sort: Newest</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="list-section">
+      <h2>So'nggi yangiliklar va release-lar</h2>
+      <ul id="gamesList" class="games-list" aria-live="polite"></ul>
+      <div id="noResults" class="no-results" hidden>Natija topilmadi.</div>
+    </section>
+
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Tez Release Calendar</h3>
+        <ul id="calendar" class="calendar"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Filterlar</h3>
+        <button class="chip" data-filter="all">Barchasi</button>
+        <button class="chip" data-filter="released">Chiqqanlar</button>
+        <button class="chip" data-filter="upcoming">Kelayotganlar</button>
+      </div>
+
+      <div class="card about">
+        <h3>Sayt haqida</h3>
+        <p>Bu demo sayt o'yin yangiliklari va release-larni ko'rsatish uchun ishlab chiqilgan. Kodni o'zgartirish va o'zingizga moslashtirish mumkin.</p>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Modal for details -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document">
+      <button id="closeModal" class="close" aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> GamePulse — O'yin yangiliklari. Designed with ❤️ for gamers.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
